@@ -68,7 +68,7 @@ class Converter
     {
         $srt = new SubripFile();
         foreach ($_vtt->getCues() as $cue) {
-            $srt->addCue($cue->getText(), SubripCue::ms2tc($cue->getStartMS()), SubripCue::ms2tc($cue->getStopMS()));
+            $srt->addCue(strip_tags($cue->getText()), SubripCue::ms2tc($cue->getStartMS()), SubripCue::ms2tc($cue->getStopMS()));
         }
 
         return $srt;
